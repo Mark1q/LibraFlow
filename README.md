@@ -96,24 +96,22 @@ LibraFlow is a feature-rich desktop library management application built with C+
 ```
 LibraFlow/
 ├── Core/
-│   ├── book.h/.cpp           # Book entity with validation
+│   ├── book.h/.cpp           # Book entity with validation and JSON serialization
 │   ├── repository.h/.cpp     # Abstract repository interface
-│   ├── csvrepository.h/.cpp  # CSV storage implementation
-│   └── jsonrepository.h/.cpp # JSON storage implementation
+│   ├── csvrepository.h/.cpp  # CSV file storage implementation
+│   └── jsonrepository.h/.cpp # JSON file storage implementation
 ├── Business/
-│   ├── controller.h/.cpp     # Main business logic controller
-│   ├── commands.h/.cpp       # Command pattern implementation
-│   └── filter.h/.cpp         # Strategy pattern filtering
+│   ├── controller.h/.cpp     # Main business logic controller  
+│   ├── commands.h/.cpp       # Command pattern for undo/redo operations
+│   └── filter.h/.cpp         # Strategy pattern filtering system
 ├── UI/
-│   ├── mainwindow.h/.cpp     # Main application window
-│   └── mainwindow.ui         # Qt Designer UI file
+│   ├── mainwindow.h/.cpp     # Main Qt application window
+│   └── mainwindow.ui         # Qt Designer UI layout file
 ├── Testing/
 │   ├── testframework.h/.cpp  # Custom testing infrastructure
-│   ├── librarytests.h/.cpp   # Test suite definitions
-│   └── tests.cpp             # Test implementations
-└── Resources/
-    ├── data.csv              # Sample CSV data
-    └── data.json             # Sample JSON data
+│   ├── librarytests.h/.cpp   # Test suite definitions and implementations
+│   └── tests.cpp             # Test execution implementations
+└── main.cpp                  # Application entry point
 ```
 
 ---
