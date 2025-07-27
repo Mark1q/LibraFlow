@@ -97,7 +97,7 @@ LibraFlow is a feature-rich desktop library management application built with C+
 LibraFlow/
 ├── Core/
 │   ├── book.h/.cpp           # Book entity with validation
-│   ├── repository.h          # Abstract repository interface
+│   ├── repository.h/.cpp     # Abstract repository interface
 │   ├── csvrepository.h/.cpp  # CSV storage implementation
 │   └── jsonrepository.h/.cpp # JSON storage implementation
 ├── Business/
