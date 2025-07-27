@@ -165,11 +165,20 @@ cmake --build .
 The project includes a comprehensive test suite built with a custom testing framework:
 
 ```bash
-# Run all tests
-./LibraFlow --test
+# Tests are integrated into the application
+# Run the executable and access tests through the application menu
+# Or modify main.cpp to run tests directly at startup
 
-# Or run individual test suites in the application
-# Tests are automatically registered and executed
+# Example integration in main.cpp:
+BookTests bookTests;
+CSVRepositoryTests csvTests;
+JSONRepositoryTests jsonTests;
+ControllerTests controllerTests;
+FilterTests filterTests;
+
+bookTests.runAllTests();
+csvTests.runAllTests();
+// ... etc
 ```
 
 **Test Coverage:**
