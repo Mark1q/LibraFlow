@@ -168,15 +168,17 @@ The project includes a comprehensive test suite built with a custom testing fram
 # Or modify main.cpp to run tests directly at startup
 
 # Example integration in main.cpp:
-BookTests bookTests;
-CSVRepositoryTests csvTests;
-JSONRepositoryTests jsonTests;
-ControllerTests controllerTests;
-FilterTests filterTests;
+std::vector<std::unique_ptr<TestFramework>> testSuites;
+testSuites.emplace_back(std::make_unique<BookTests>());
+testSuites.emplace_back(std::make_unique<CSVRepositoryTests>());
+testSuites.emplace_back(std::make_unique<JSONRepositoryTests>());
+testSuites.emplace_back(std::make_unique<ControllerTests>());
+testSuites.emplace_back(std::make_unique<FilterTests>());
 
-bookTests.runAllTests();
-csvTests.runAllTests();
-// ... etc
+for (auto& suite : testSuites) {
+    suite->runAllTests();
+    suite->printResults();
+}
 ```
 
 **Test Coverage:**
